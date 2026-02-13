@@ -3,59 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day</title>
+    <title>Happy Valentine's Day!</title>
     <style>
         body {
-            background-color: #ffcccb;
+            background-color: #ffeef8;
+            color: #ff3366;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            font-family: Arial, sans-serif;
+            overflow: hidden;
         }
         h1 {
-            color: #d50000;
             font-size: 3em;
+            margin-top: 50px;
         }
         .heart {
-            display: inline-block;
+            position: absolute;
             width: 50px;
             height: 50px;
-            background-color: red;
-            transform: rotate(-45deg);
-            margin: 10px;
-            animation: beat 1s infinite;
+            background-color: #ff3366;
+            transform: rotate(45deg);
+            animation: float 5s infinite;
         }
         .heart::before, .heart::after {
             content: "";
-            background-color: red;
-            border-radius: 50%;
             position: absolute;
-        }
-        .heart::before {
             width: 50px;
             height: 50px;
+            background-color: #ff3366;
+            border-radius: 50%;
+        }
+        .heart::before {
             top: -25px;
             left: 0;
         }
         .heart::after {
-            width: 50px;
-            height: 50px;
             left: 25px;
-            top: 0;
         }
-        @keyframes beat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        .quote {
+            font-size: 1.5em;
+            margin: 20px;
+            padding: 10px;
+            border: 2px dashed pink;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
         }
     </style>
 </head>
 <body>
-    <h1>Happy Valentine's Day! ❤️</h1>
-    <div class="heart"></div><div class="heart"></div><div class="heart"></div>
-    <p>&quot;Love is in the air!&quot; - Anonymous</p>
-    <p>&quot;You are my today and all of my tomorrows.&quot; - Leo Christopher</p>
-    <p>🌹💕💌</p>
+    <h1>Happy Valentine's Day!</h1>
+    <div class="heart"></div>
+    <div class="heart" style="top: 100px; left: 50px;"></div>
+    <div class="heart" style="top: 200px; left: 150px;"></div>
+    <div class="heart" style="top: 300px; left: 250px;"></div>
+    <div class="heart" style="top: 400px; left: 350px;"></div>
+
+    <div class="quote">
+        "Love is composed of a single soul inhabiting two bodies." - Aristotle
+    </div>
+    <div class="quote">
+        "You know you're in love when you can't fall asleep because reality is finally better than your dreams." - Dr. Seuss
+    </div>
+    <div class="quote">
+        "Where there is love there is life." - Mahatma Gandhi
+    </div>
+    <div class="quote">
+        "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage." - Lao Tzu
+    </div>
+    <div class="quote">
+        "I have waited for this opportunity for more than half a century, to repeat to you once again my vow of eternal fidelity and everlasting love." - Gabriel Garcia Marquez
+    </div>
+    <div class="quote">
+        "To love and be loved is to feel the sun from both sides." - David Viscott
+    </div>
+    <div class="quote">
+        "The best thing to hold onto in life is each other." - Audrey Hepburn
+    </div>
+    <div class="quote">
+        "Love is not about possession. Love is about appreciation." - Osho
+    </div>
+    <div class="quote">
+        "You are loved just for being who you are, just for existing. You don’t have to do anything to earn it." - Ram Dass
+    </div>
+
+    <script>
+        // Generate multiple hearts
+        for (let i = 0; i < 20; i++) {
+            let heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.top = Math.random() * window.innerHeight + 'px';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            document.body.appendChild(heart);
+        }
+    </script>
 </body>
 </html>
