@@ -3,103 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day!</title>
+    <title>Valentine's Website</title>
     <style>
         body {
-            background-color: #ffeef8;
-            color: #ff3366;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #fff5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .photo-frame {
+            border: 10px solid pink;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .romantic-quote {
+            font-size: 24px;
+            color: #d5006d;
             text-align: center;
-            overflow: hidden;
+            margin-top: 15px;
         }
-        h1 {
-            font-size: 3em;
-            margin-top: 50px;
-        }
-        .heart {
+        .emoji {
             position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: #ff3366;
-            transform: rotate(45deg);
-            animation: float 5s infinite;
-        }
-        .heart::before, .heart::after {
-            content: "";
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: #ff3366;
-            border-radius: 50%;
-        }
-        .heart::before {
-            top: -25px;
-            left: 0;
-        }
-        .heart::after {
-            left: 25px;
+            pointer-events: none;
         }
         @keyframes float {
             0% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
             100% { transform: translateY(0); }
         }
-        .quote {
-            font-size: 1.5em;
-            margin: 20px;
-            padding: 10px;
-            border: 2px dashed pink;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
+        .animated-emoji {
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <h1>Happy Valentine's Day!</h1>
-    <div class="heart"></div>
-    <div class="heart" style="top: 100px; left: 50px;"></div>
-    <div class="heart" style="top: 200px; left: 150px;"></div>
-    <div class="heart" style="top: 300px; left: 250px;"></div>
-    <div class="heart" style="top: 400px; left: 350px;"></div>
-
-    <div class="quote">
-        "Love is composed of a single soul inhabiting two bodies." - Aristotle
+    <div class="photo-frame">
+        <img src="custom-couple-image.jpg" alt="Couple Image" style="width: 300px; border-radius: 20px;" />
+        <div class="romantic-quote">"Together is a wonderful place to be."</div>
+        <div class="emoji animated-emoji" style="top: 10px; left: 10px;">F60D</div>
+        <div class="emoji animated-emoji" style="top: 40px; right: 10px;">F496</div>
+        <div class="emoji animated-emoji" style="bottom: 10px; left: 40%;">F618</div>
     </div>
-    <div class="quote">
-        "You know you're in love when you can't fall asleep because reality is finally better than your dreams." - Dr. Seuss
-    </div>
-    <div class="quote">
-        "Where there is love there is life." - Mahatma Gandhi
-    </div>
-    <div class="quote">
-        "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage." - Lao Tzu
-    </div>
-    <div class="quote">
-        "I have waited for this opportunity for more than half a century, to repeat to you once again my vow of eternal fidelity and everlasting love." - Gabriel Garcia Marquez
-    </div>
-    <div class="quote">
-        "To love and be loved is to feel the sun from both sides." - David Viscott
-    </div>
-    <div class="quote">
-        "The best thing to hold onto in life is each other." - Audrey Hepburn
-    </div>
-    <div class="quote">
-        "Love is not about possession. Love is about appreciation." - Osho
-    </div>
-    <div class="quote">
-        "You are loved just for being who you are, just for existing. You don’t have to do anything to earn it." - Ram Dass
-    </div>
-
-    <script>
-        // Generate multiple hearts
-        for (let i = 0; i < 20; i++) {
-            let heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.style.top = Math.random() * window.innerHeight + 'px';
-            heart.style.left = Math.random() * window.innerWidth + 'px';
-            heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
-            document.body.appendChild(heart);
-        }
-    </script>
 </body>
 </html>
