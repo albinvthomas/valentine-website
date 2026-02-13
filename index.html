@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            background-color: #ffcccb;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #d50000;
+            font-size: 3em;
+        }
+        .heart {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            transform: rotate(-45deg);
+            margin: 10px;
+            animation: beat 1s infinite;
+        }
+        .heart::before, .heart::after {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            width: 50px;
+            height: 50px;
+            top: -25px;
+            left: 0;
+        }
+        .heart::after {
+            width: 50px;
+            height: 50px;
+            left: 25px;
+            top: 0;
+        }
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's Day! ❤️</h1>
+    <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+    <p>&quot;Love is in the air!&quot; - Anonymous</p>
+    <p>&quot;You are my today and all of my tomorrows.&quot; - Leo Christopher</p>
+    <p>🌹💕💌</p>
+</body>
+</html>
